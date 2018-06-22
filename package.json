@@ -16,8 +16,8 @@
     "webpack-dev-server": "^1.16.2"
   },
   "scripts": {
-    "start": "node_modules/.bin/webpack src/app.js -o bundle.js && webpack-dev-server",
     "test": "mocha --require babel-register ./test/*.spec.js",
-    "start:dev": "webpack-dev-server --progress --colors"
+    "server": "webpack-dev-server",
+    "watch": "node_modules/.bin/webpack --progress --watch --colors"
   }
 }
