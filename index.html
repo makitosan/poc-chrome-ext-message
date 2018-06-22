@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Send Message</title>
+  </head>
+  <body>
+    <h1>Send Message</h1>
+    <input id="message" type="text" />
+    <button id="buttonSendMessage">click to send message</button>
+  </body>
+  <script>
+    document.getElementById('buttonSendMessage').addEventListener('click', function(event){
+      var message = document.getElementById('message').value;
+      console.log(message);
+      // http://krasimirtsonev.com/blog/article/Send-message-from-web-page-to-chrome-extensions-background-script
+      var event = new CustomEvent('hello', {'detail': {'message': message}});
+      document.dispatchEvent(event);
+    });
+  </script>
+</html>
